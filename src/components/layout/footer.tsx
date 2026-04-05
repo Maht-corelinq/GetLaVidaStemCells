@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="relative bg-ocean-deepest text-cream overflow-hidden">
       {/* Brand reveal zone */}
-      <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[25vh] flex items-center justify-center overflow-hidden">
         <motion.span
           style={{ scale: brandScale, opacity: brandOpacity }}
           className="font-display text-[14vw] md:text-[10vw] font-bold text-cream whitespace-nowrap select-none pointer-events-none"

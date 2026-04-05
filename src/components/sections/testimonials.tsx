@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { fadeInUp } from "@/lib/animations";
 
@@ -55,7 +54,7 @@ function StarRating({ count }: { count: number }) {
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
-    <div className="shrink-0 w-[85vw] md:w-[45vw] lg:w-[35vw] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-8 md:p-10">
+    <div className="shrink-0 w-[85vw] md:w-[45vw] lg:w-[400px] rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-8 md:p-10">
       <span
         className="block font-display text-7xl md:text-8xl text-coral/15 leading-none select-none -mt-4 -mb-6"
         aria-hidden="true"
@@ -84,23 +83,10 @@ interface TestimonialsProps {
 }
 
 function Testimonials({ testimonials = defaultTestimonials }: TestimonialsProps) {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: outerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const cardCount = testimonials.length;
-  const x = useTransform(
-    scrollYProgress,
-    [0.1, 0.9],
-    ["0%", `${-(cardCount - 1) * 38}%`]
-  );
-
   return (
-    <section className="relative bg-ocean-deepest overflow-hidden">
+    <section className="relative bg-ocean-deepest overflow-hidden py-20 md:py-28">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-12">
+      <div className="max-w-6xl mx-auto px-6 mb-12">
         <motion.div
           variants={fadeInUp}
           initial="hidden"
@@ -119,25 +105,11 @@ function Testimonials({ testimonials = defaultTestimonials }: TestimonialsProps)
         </motion.div>
       </div>
 
-      {/* Desktop: sticky horizontal scroll */}
-      <div ref={outerRef} className="hidden lg:block min-h-[200vh] relative">
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center pt-12">
-          <motion.div
-            style={{ x }}
-            className="flex gap-8 pl-[max(1.5rem,calc((100vw-72rem)/2))]"
-          >
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} t={t} />
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Mobile: horizontal snap scroll */}
-      <div className="lg:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none pb-24">
-        <div className="flex gap-6 px-6">
+      {/* Horizontal scroll for all viewports */}
+      <div className="overflow-x-auto snap-x snap-mandatory scrollbar-none">
+        <div className="flex gap-6 px-[max(1.5rem,calc((100vw-72rem)/2))]">
           {testimonials.map((t) => (
-            <div key={t.name} className="snap-center">
+            <div key={t.name} className="snap-start">
               <TestimonialCard t={t} />
             </div>
           ))}

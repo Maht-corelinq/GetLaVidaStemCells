@@ -68,10 +68,11 @@ export default function HomePage() {
 
       {/* What is Stem Cell Therapy */}
       <SectionOverlay>
-        <section id="about" className="py-32 md:py-40 px-6 bg-white">
+        <section id="about" className="py-20 md:py-28 px-6 bg-white">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Heading anchored left, taking 5 cols */}
-            <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <div className="lg:col-span-5">
+              <div className="w-12 h-1 bg-coral rounded-full mb-6" />
               <h2
                 className="font-heading font-bold text-ocean-deepest leading-[1.1] tracking-tight"
                 style={{ fontSize: "var(--text-heading-1)" }}
@@ -80,7 +81,7 @@ export default function HomePage() {
               </h2>
             </div>
             {/* Body text on the right, taking 7 cols */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 lg:pt-8">
               <p className="text-gray-600 leading-relaxed" style={{ fontSize: "var(--text-body-lg)" }}>
                 Stem cell therapy harnesses your body&apos;s natural ability to heal.
                 Using fresh UC-MSC (Umbilical Cord Mesenchymal Stem Cells), our
@@ -92,6 +93,13 @@ export default function HomePage() {
                 medicine works with your body to address the underlying causes of
                 pain, degeneration, and dysfunction.
               </p>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-coral/20 border-2 border-white flex items-center justify-center text-xs font-bold text-coral">92%</div>
+                  <div className="w-10 h-10 rounded-full bg-seafoam/20 border-2 border-white flex items-center justify-center text-xs font-bold text-seafoam-dark">+</div>
+                </div>
+                <p className="text-sm text-gray-500">Cell viability rate with fresh, never-frozen UC-MSCs</p>
+              </div>
             </div>
           </div>
         </section>
@@ -164,7 +172,7 @@ export default function HomePage() {
       <Disclaimer />
 
       <SectionOverlay>
-        <section className="py-32 md:py-40 px-6 bg-cream">
+        <section className="py-20 md:py-28 px-6 bg-cream">
           <div className="max-w-5xl mx-auto">
             <h2
               className="font-heading font-bold text-ocean-deepest mb-12 leading-[1.1] tracking-tight"
