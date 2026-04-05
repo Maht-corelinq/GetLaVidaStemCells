@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import VoiceAgentWidget from "@/components/sections/voice-agent-widget";
 import "./globals.css";
 
 const inter = Inter({
@@ -84,6 +85,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <VoiceAgentWidget />
 
         {metaPixelId && (
           <Script id="meta-pixel" strategy="afterInteractive">

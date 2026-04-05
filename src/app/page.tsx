@@ -9,7 +9,6 @@ import LeadForm from "@/components/sections/lead-form";
 import CtaBand from "@/components/sections/cta-band";
 import StatsBand from "@/components/sections/stats-band";
 import Disclaimer from "@/components/sections/disclaimer";
-import ChatbotWidget from "@/components/sections/chatbot-widget";
 import SectionOverlay from "@/components/ui/section-overlay";
 import ParallaxImageDivider from "@/components/ui/parallax-image-divider";
 
@@ -189,7 +188,6 @@ export default function HomePage() {
         <LeadForm />
       </SectionOverlay>
 
-      <ChatbotWidget />
     </>
   );
 }

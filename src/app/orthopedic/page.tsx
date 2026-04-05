@@ -7,7 +7,6 @@ import FaqAccordion from "@/components/sections/faq-accordion";
 import LeadForm from "@/components/sections/lead-form";
 import CtaBand from "@/components/sections/cta-band";
 import Disclaimer from "@/components/sections/disclaimer";
-import ChatbotWidget from "@/components/sections/chatbot-widget";
 import ParallaxImageDivider from "@/components/ui/parallax-image-divider";
 import SectionOverlay from "@/components/ui/section-overlay";
 import OrthoConditions from "@/components/sections/ortho-conditions";
@@ -225,7 +224,6 @@ export default function OrthopedicPage() {
         <LeadForm />
       </SectionOverlay>
 
-      <ChatbotWidget />
     </>
   );
 }
